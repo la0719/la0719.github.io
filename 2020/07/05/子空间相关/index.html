@@ -63,18 +63,13 @@
 
 <p><strong>张成集定理</strong>：令$S=\{u_1,…,u_m\}$是向量空间$V$的一个子集，$W=Span\{u_1,…,u_m\}$是由$S$的$m$个列向量张成的子空间，那么<br>(1)若$S$内某个向量(例如$u_k$)是其他向量的线性组合，则删去后，其他向量仍能张成子空间$W$.<br>(2)若$W\neq\{0\}$,则$S$内一定存在某个由线性无关的向量组成的子集合，它张成子空间$W$. 易证，证明详见.<sup>[1, p.484]</sup></p>
 <p>从而有，<br><strong>定义2</strong>：令$W$是一向量子空间，向量集合$\{u_1,…,u_p\}$称为$W$的<font color=#DC143C>一组基</font>，若下列两个条件满足：<br>(1)子空间$W$由$u_1,…,u_p$张成，即</p>
-<script type="math/tex; mode=display">W=Span\{u_1,...,u_p\}$$(2)向量集合$B=\{u_1,...,u_p\}$是一<font color=#DC143C>线性无关</font>的集合.
-
-<font color=#DC143C>note: 需要注意的是，不是</font>唯一的基，<font color=#DC143C>而是一组基. 比如，这一组基中的任意一个向量乘上一个常数(易知这个向量也在子空间内)，新的这一组基仍然是线性无关的.(若线性相关，则原来的这组基也是线性相关的. 只需要将对应向量的解除以这个常数就能实现，和线性无关假设相悖.)</font>
-因此，一个子空间的基可以有多种选择，但基都有相同数目的线性无关向量. 从而可以给出<font color=#DC143C>维数</font>的概念.
-
-**定义3**: 子空间$W$的任何一组基的向量个数称为$W$的维数， 用符号$dim(W)$表示.
-
-**正交子空间**: 若一向量与子空间$S$的所有向量都正交，则称该向量正交于子空间$S$. 由此，称子空间$S_1,S_2,...,S_n$为正交子空间，记作$S_i \perp S_j, i \neq j,$ 若$a_i \perp a_j$对所有$a_i \in S_i, a_j \in S_j(i \neq j)$恒成立.
-特别的，与子空间$S$正交的所有向量的集合组成一个向量子空间，称为$S$的<font color=#DC143C>正交补空间</font>，记作$S^{\perp}$. 可写为(复向量对应共轭转置)
-$$S^{\perp}=\{x|x^Hy=0, \forall y \in S\}$$两者维数满足
-$$dim(S)+dim(S^{\perp})=dim(V)</script><p><font color=#DC143C>note:<br>(1)正交补空间正交子空间更为严格，是对于$S$来说唯一确定的.<br>(2)$S^{\perp}$和$S$恰好组成向量空间$V$. 即$S \oplus S^{\perp}=V$($\oplus 为直和$).<br>(3)那么, $V$的每一个向量$v$都可以用唯一方式分解为子空间$S$的向量$x$与正交补$S^{\perp}$的向量$y$之和, 即</p>
-<p><script type="math/tex">u=x+y, x \perp y</script>(4)$rank(A)=dim(S)=dim[Col(S)]$， 其中$A$是由$s_1,s_2,…,s_m$这$m$个列向量组成的矩阵，$Col(S)=Span\{s_1,…,s_m\}, 即矩阵A的列空间$<sup>[1, p.52]</sup>.<br><br/></p>
+<script type="math/tex; mode=display">W=Span\{u_1,...,u_p\}</script><p>(2)向量集合$B=\{u_1,…,u_p\}$是一<font color=#DC143C>线性无关</font>的集合.</p>
+<p><font color=#DC143C>note: 需要注意的是，不是</font>唯一的基，<font color=#DC143C>而是一组基. 比如，这一组基中的任意一个向量乘上一个常数(易知这个向量也在子空间内)，新的这一组基仍然是线性无关的.(若线性相关，则原来的这组基也是线性相关的. 只需要将对应向量的解除以这个常数就能实现，和线性无关假设相悖.)</font><br>因此，一个子空间的基可以有多种选择，但基都有相同数目的线性无关向量. 从而可以给出<font color=#DC143C>维数</font>的概念.</p>
+<p><strong>定义3</strong>: 子空间$W$的任何一组基的向量个数称为$W$的维数， 用符号$dim(W)$表示.</p>
+<p><strong>正交子空间</strong>: 若一向量与子空间$S$的所有向量都正交，则称该向量正交于子空间$S$. 由此，称子空间$S_1,S_2,…,S_n$为正交子空间，记作$S_i \perp S_j, i \neq j,$ 若$a_i \perp a_j$对所有$a_i \in S_i, a_j \in S_j(i \neq j)$恒成立.<br>特别的，与子空间$S$正交的所有向量的集合组成一个向量子空间，称为$S$的<font color=#DC143C>正交补空间</font>，记作$S^{\perp}$. 可写为(复向量对应共轭转置)</p>
+<script type="math/tex; mode=display">S^{\perp}=\{x|x^Hy=0, \forall y \in S\}</script><p>两者维数满足</p>
+<script type="math/tex; mode=display">dim(S)+dim(S^{\perp})=dim(V)</script><p><font color=#DC143C>note:<br>(1)正交补空间正交子空间更为严格，是对于$S$来说唯一确定的.<br>(2)$S^{\perp}$和$S$恰好组成向量空间$V$. 即$S \oplus S^{\perp}=V$($\oplus 为直和$).<br>(3)那么, $V$的每一个向量$v$都可以用唯一方式分解为子空间$S$的向量$x$与正交补$S^{\perp}$的向量$y$之和, 即</p>
+<script type="math/tex; mode=display">u=x+y, x \perp y</script><p>(4)$rank(A)=dim(S)=dim[Col(S)]$， 其中$A$是由$s_1,s_2,…,s_m$这$m$个列向量组成的矩阵，$Col(S)=Span\{s_1,…,s_m\}, 即矩阵A的列空间$<sup>[1, p.52]</sup>.<br><br/></p>
 <h4 id="子空间的正交投影"><a href="#子空间的正交投影" class="headerlink" title="子空间的正交投影"></a>子空间的正交投影</h4>	  
 
 	  <div>
@@ -157,5 +152,20 @@ $$dim(S)+dim(S^{\perp})=dim(V)</script><p><font color=#DC143C>note:<br>(1)正交
    </script>
 
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </body>
 </html>
