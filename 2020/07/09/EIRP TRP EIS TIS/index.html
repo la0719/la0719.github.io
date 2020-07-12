@@ -1,0 +1,182 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>EIRP TRP EIS TIS的概念 以及隔离度的计算 | LA.SPACE</title>
+  <meta name="author" content="Ao Liu">
+  
+  <meta name="description" content="EIRP TRP EIS TIS的概念 以及隔离度的计算EIRP与TRPnote: 部分内容用英语描述较方便，故本页会中英混合. 简单起见，且文中不考虑各种损耗.EIRP：Effective(Equivalent) Isotropic Radiated Power.(1)In antenna mea">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="EIRP TRP EIS TIS的概念 以及隔离度的计算"/>
+  <meta property="og:site_name" content="LA.SPACE"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  
+    <link rel="alternative" href="/atom.xml" title="LA.SPACE" type="application/atom+xml">
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">  
+  <link rel="stylesheet" href="/css/sidenav.css" media="screen" type="text/css">  
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body id="body" data-spy="scroll" data-target=".toc">
+  <div class="container" id="container">
+	<div class="content">
+	  <div class="page-header">		
+  <h1><a class="brand" href="/">LA.SPACE</a><span class="split"></span><span class="title">EIRP TRP EIS TIS的概念 以及隔离度的计算</span><span class="date" id="title-date"><i class="fa fa-clock-o"></i> 2020-07-09</span></h1>
+</div>		
+
+<div class="row page">
+  <!-- cols -->	
+  
+  
+
+  
+	<div class="col-md-12">
+	  
+
+	  <!-- content -->
+	  <h2 id="EIRP-TRP-EIS-TIS的概念-以及隔离度的计算"><a href="#EIRP-TRP-EIS-TIS的概念-以及隔离度的计算" class="headerlink" title="EIRP TRP EIS TIS的概念 以及隔离度的计算"></a><font size=6>EIRP TRP EIS TIS的概念 以及隔离度的计算</font></h2><h3 id="EIRP与TRP"><a href="#EIRP与TRP" class="headerlink" title="EIRP与TRP"></a><font size=5>EIRP与TRP</font></h3><p><font color=#DC143C>note: 部分内容用英语描述较方便，故本页会中英混合. 简单起见，且文中不考虑各种损耗.</font><br><strong>EIRP</strong>：Effective(Equivalent) Isotropic Radiated Power.<br>(1)In antenna measurements, the measured radiated power in a single direction (that is, for a fixed $\theta$ and $\phi$) is known as the EIRP.<br>(2)EIRP can also be thought of as the amount of power a perfectly isotropic antenna would need to radiate to achieve the measured value.</p>
+<script type="math/tex; mode=display">EIRP=PG$$P是发射功率，G是对应指向上的方向性增益.单位是W、dBW等等.
+
+<font color=#DC143C>note</font>: 上面是**Antenna Theory**给出的定义. 第一种定义感觉有问题，因为总的发射功率是一定的，阵列的方向性增益并不会凭空提供更多功率，增加的是功率密度. 所以，在某个方向上辐射的功率这种说法存疑.
+
+但再结合**Wiki**上的定义，
+**Wiki**：Effective isotropic radiated power <font color=#DC143C>measures the amount of power a radio transmitter and antenna (or other source of electromagnetic waves) radiates in a specific direction</font>: in the direction of maximum signal strength (the "main lobe") of its radiation pattern. (应该也可以是等效任意方向，不一定是最大功率密度方向).
+
+This apparent power is dependent on two factors: the total power output and the radiation pattern of the antenna – how much of that power is radiated in the desired direction. The latter factor is quantified by the antenna gain, which is the ratio of the signal strength radiated by an antenna to that radiated by a standard antenna. 
+
+For example, a 1,000-watt transmitter feeding an antenna with a gain of 4 (6 dBi) will have the same signal strength in the direction of its main lobe, and thus the same EIRP, as a 4,000-watt transmitter feeding an antenna with a gain of 1 (0 dBi). So EIRP is measure of radiated power that can compare different combinations of transmitters and antennas on an equal basis.
+
+In spite of the names, <font color=#DC143C>EIRP does not measure transmitter power, or total power radiated by the antenna</font>, they are just <font color=#DC143C>a measure of signal strength </font>along the main lobe. They give no information about power radiated in other directions, or total power. EIRP is always greater than the actual total power radiated by the antenna.
+
+简单来说就是，EIRP是在特定方向上的输出功率，不是总功率，是对功率密度的一种表征. 我认为不存在“在某个方向上辐射的功率”这种说法，有的是功率密度，功率量还要考虑接收的有效面积. 只能说这是一种定义上的表示，用来快速对两个不同的天线的效能进行对比，或者体现该天线或任意发射机的效能.
+
+**TRP**：Total Raidated Power
+TRP is a measure of how much power is radiated by an antenna when the antenna is connected to an actual radio (or transmitter). 
+给出计算公式
+$$TRP=\int^{2\pi}_{0}\int^{\pi}_{0}B(\theta,\phi)\sin{\theta}d\theta d\phi</script><script type="math/tex; mode=display">TRP=\frac{1}{4\pi} \int^{2\pi}_{0}\int^{\pi}_{0}EIRP(\theta,\phi)\sin{\theta}d\theta d\phi</script><p>其中$B(\theta,\phi)=|Af(\theta,\phi)w^Hs|^2$. $A$ is the field amplitude and $f(\theta,\phi)$ is the normalized element field pattern. $w^Hs$ is the array factor.</p>
+<p>也就是说$B(\theta,\phi)$是功率谱密度，可以由方向图的模平方来表示. 算方向性增益时可以对权值归一化，如果是算实际的辐射功率，应该要考虑权值对应的电压值大小.<br>EIRP是功率量，要除以$4\pi$才能得到对应方向的功率密度.</p>
+	  
+
+	  <div>
+  		<center>
+		  <div class="pagination">
+<ul class="pagination">
+	
+	
+	
+	
+	
+	
+		
+			
+			
+		
+	
+		
+	
+		
+	
+	
+	
+		<li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>prev</a></li>
+	
+	<li><a href="/"><i class="fa fa-archive"></i>Home</a></li>
+	
+		<li class="next disabled"><a>next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+	
+</ul>
+</div>
+
+		</center>
+	  </div>
+	  
+	</div> <!-- col-md-9/col-md-12 -->
+	
+  </div><!-- row -->
+
+	</div>
+  </div>
+  <div class="container-narrow">
+	<footer> <p>
+  &copy; 2020 Ao Liu
+  
+      with help from <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-wixo/" target="_blank" rel="noopener">Wixo</a>.    
+</p> </footer>
+  </div> <!-- container-narrow -->
+  
+<a id="gotop" href="#">   
+  <span>▲</span> 
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.tableofcontents.min.js"></script>
+<script src="/js/tocgenerator.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+</html>
