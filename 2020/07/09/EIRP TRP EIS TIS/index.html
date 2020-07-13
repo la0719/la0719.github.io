@@ -6,7 +6,9 @@
   <title>EIRP TRP EIS TIS的概念 以及隔离度的计算 | LA.SPACE</title>
   <meta name="author" content="Ao Liu">
   
-  <meta name="description" content="EIRP TRP EIS TIS的概念 以及隔离度的计算EIRP与TRPnote: 部分内容用英语描述较方便，故本页会中英混合. 简单起见，且文中不考虑各种损耗.EIRP：Effective(Equivalent) Isotropic Radiated Power.(1)In antenna mea">
+  <meta name="description" content="EIRP TRP EIS TIS的概念 以及隔离度的计算EIRP与TRPnote: 部分内容用英语描述较方便，故本页会中英混合. 简单起见，且文中不考虑各种损耗.
+
+EIRP：Effective(Equivalent) Isotropic Radiated Power.(1)In antenna m">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -58,9 +60,10 @@
 	  
 
 	  <!-- content -->
-	  <h2 id="EIRP-TRP-EIS-TIS的概念-以及隔离度的计算"><a href="#EIRP-TRP-EIS-TIS的概念-以及隔离度的计算" class="headerlink" title="EIRP TRP EIS TIS的概念 以及隔离度的计算"></a><font size=6>EIRP TRP EIS TIS的概念 以及隔离度的计算</font></h2><h3 id="EIRP与TRP"><a href="#EIRP与TRP" class="headerlink" title="EIRP与TRP"></a><font size=5>EIRP与TRP</font></h3><p><font color=#DC143C>note: 部分内容用英语描述较方便，故本页会中英混合. 简单起见，且文中不考虑各种损耗.</font><br><strong>EIRP</strong>：Effective(Equivalent) Isotropic Radiated Power.<br>(1)In antenna measurements, the measured radiated power in a single direction (that is, for a fixed $\theta$ and $\phi$) is known as the EIRP.<br>(2)EIRP can also be thought of as the amount of power a perfectly isotropic antenna would need to radiate to achieve the measured value.</p>
-<script type="math/tex; mode=display">EIRP=PG$$P是发射功率，G是对应指向上的方向性增益.单位是W、dBW等等.
+	  <h2 id="EIRP-TRP-EIS-TIS的概念-以及隔离度的计算"><a href="#EIRP-TRP-EIS-TIS的概念-以及隔离度的计算" class="headerlink" title="EIRP TRP EIS TIS的概念 以及隔离度的计算"></a><font size=6>EIRP TRP EIS TIS的概念 以及隔离度的计算</font></h2><h3 id="EIRP与TRP"><a href="#EIRP与TRP" class="headerlink" title="EIRP与TRP"></a><font size=5>EIRP与TRP</font></h3><font color=#DC143C>note: 部分内容用英语描述较方便，故本页会中英混合. 简单起见，且文中不考虑各种损耗.</font>
 
+<p><strong>EIRP</strong>：Effective(Equivalent) Isotropic Radiated Power.<br>(1)In antenna measurements, the measured radiated power in a single direction (that is, for a fixed $\theta$ and $\phi$) is known as the EIRP.<br>(2)EIRP can also be thought of as the amount of power a perfectly isotropic antenna would need to radiate to achieve the measured value.</p>
+<script type="math/tex; mode=display">EIRP=PG</script><p>P是发射功率，G是对应指向上的方向性增益.单位是W、dBW等等.</p>
 <font color=#DC143C>note</font>: 上面是**Antenna Theory**给出的定义. 第一种定义感觉有问题，因为总的发射功率是一定的，阵列的方向性增益并不会凭空提供更多功率，增加的是功率密度. 所以，在某个方向上辐射的功率这种说法存疑.
 
 但再结合**Wiki**上的定义，
@@ -77,9 +80,18 @@ In spite of the names, <font color=#DC143C>EIRP does not measure transmitter pow
 **TRP**：Total Raidated Power
 TRP is a measure of how much power is radiated by an antenna when the antenna is connected to an actual radio (or transmitter). 
 给出计算公式
-$$TRP=\int^{2\pi}_{0}\int^{\pi}_{0}B(\theta,\phi)\sin{\theta}d\theta d\phi</script><script type="math/tex; mode=display">TRP=\frac{1}{4\pi} \int^{2\pi}_{0}\int^{\pi}_{0}EIRP(\theta,\phi)\sin{\theta}d\theta d\phi</script><p>其中$B(\theta,\phi)=|Af(\theta,\phi)w^Hs|^2$. $A$ is the field amplitude and $f(\theta,\phi)$ is the normalized element field pattern. $w^Hs$ is the array factor.</p>
-<p>也就是说$B(\theta,\phi)$是功率谱密度，可以由方向图的模平方来表示. 算方向性增益时可以对权值归一化，如果是算实际的辐射功率，应该要考虑权值对应的电压值大小.<br>EIRP是功率量，要除以$4\pi$才能得到对应方向的功率密度.</p>
-	  
+
+$$TRP=\int^{2\pi}_{0}\int^{\pi}_{0}B(\theta,\phi)\sin{\theta}d\theta d\phi$$
+也可以表示为
+$$TRP=\frac{1}{4\pi} \int^{2\pi}_{0} \int^{\pi}_{0} EIRP(\theta,\phi)\sin{\theta}d\theta d\phi$$
+
+其中$B(\theta,\phi)=|Af(\theta,\phi)w^Hs|^2$. $A$ is the field amplitude and $f(\theta,\phi)$ is the normalized element field pattern. $w^Hs$ is the array factor.
+
+也就是说$B(\theta,\phi)$是功率谱密度，可以由方向图的模平方来表示. 算方向性增益时可以对权值归一化，如果是算实际的辐射功率，应该要考虑权值对应的电压值大小.
+EIRP是功率量，要除以$4 \pi$才能得到对应方向的功率密度.
+<br/><br/><br/>
+
+### <font size=6> EIS与TIS </font>	  
 
 	  <div>
   		<center>
