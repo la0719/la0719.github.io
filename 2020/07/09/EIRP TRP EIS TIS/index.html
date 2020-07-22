@@ -135,7 +135,7 @@ EIRP：Effective(Equivalent) Isotropic Radiated Power.
 <li>3.- margin for interference, fading</li>
 <li>4.&gt;= EIS</li>
 </ul>
-<p>所以可以看出，$EIRP=P_t+G_t$, $EIS=Sensitivity-G_r$ (最简单的形式，不考虑其他的因素). 这样，通过链路余量的设计，很好的解释了EIRP和EIS定义的用途.</p>
+<p>所以可以看出，$EIRP=P_t+G_t$, $EIS=Sensitivity-G_r$ (最简单的形式，不考虑其他的因素). 注意这里是将EIS移到了式子的右端，所以是减去接收增益. 这样，通过链路余量的设计，很好的解释了EIRP和EIS定义的用途.</p>
 <p>其中，关于Path Loss的部分，我刚开始一直以为确实了发射功率密度的$4\pi R^2$和接收有效面积中的$\frac{\lambda^2}{4\pi}$的常量，其实这两个都定义在了Path Loss之中，这里要引入<strong>Free-space Path Loss</strong>(FSPL)的概念，</p>
 <blockquote>
 <p>In telecommunication, the free-space path loss (FSPL) is the attenuation of radio energy between the feedpoints of two antennas that results from the combination of the receiving antenna’s capture area plus the obstacle free, line-of-sight path through free space (usually air). The “Standard Definitions of Terms for Antennas”, IEEE Std 145-1993, defines “free-space loss” as “The loss between two isotropic radiators in free space, expressed as a power ratio.” The FSPL is rarely used standalone, but rather as a part of the Friis transmission formula, which includes the gain of antennas.[3] It is a factor that must be included in the power link budget of a radio communication system, to ensure that sufficient radio power reaches the receiver that the transmitted signal is received intelligibly.</p>
