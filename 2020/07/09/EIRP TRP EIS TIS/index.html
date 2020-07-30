@@ -136,6 +136,7 @@ EIRP：Effective(Equivalent) Isotropic Radiated Power.
 <li>4.&gt;= EIS</li>
 </ul>
 <p>所以可以看出，$EIRP=P_t+G_t$, $EIS=Sensitivity-G_r$ (最简单的形式，不考虑其他的因素). 注意这里是将EIS移到了式子的右端，所以是减去接收增益. 这样，通过链路余量的设计，很好的解释了EIRP和EIS定义的用途.</p>
+<p><strong><font color=#DC143C>还有不太理解的地方：</font></strong> 既然EIRP和EIS的概念是相似的，但是EIRP可以看作是一个全向性天线为了等效DUT在某个方向上的功率密度而需要的输入功率.<br>这其中又一个”等价的”过渡，即在某个方向上相同的发射功率密度. 但对EIS我一直没能拐过弯儿来，是否也存在这样一种关系呢？等效的是发射机的发射功率吗？</p>
 <p>其中，关于Path Loss的部分，我刚开始一直以为确实了发射功率密度的$4\pi R^2$和接收有效面积中的$\frac{\lambda^2}{4\pi}$的常量，其实这两个都定义在了Path Loss之中，这里要引入<strong>Free-space Path Loss</strong>(FSPL)的概念，</p>
 <blockquote>
 <p>In telecommunication, the free-space path loss (FSPL) is the attenuation of radio energy between the feedpoints of two antennas that results from the combination of the receiving antenna’s capture area plus the obstacle free, line-of-sight path through free space (usually air). The “Standard Definitions of Terms for Antennas”, IEEE Std 145-1993, defines “free-space loss” as “The loss between two isotropic radiators in free space, expressed as a power ratio.” The FSPL is rarely used standalone, but rather as a part of the Friis transmission formula, which includes the gain of antennas.[3] It is a factor that must be included in the power link budget of a radio communication system, to ensure that sufficient radio power reaches the receiver that the transmitted signal is received intelligibly.</p>
