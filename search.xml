@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>阵列位移以及流行反相的影响</title>
+      <link href="/2020/07/31/%E9%98%B5%E5%88%97%E4%BD%8D%E7%A7%BB%E4%BB%A5%E5%8F%8A%E6%B5%81%E8%A1%8C%E5%8F%8D%E7%9B%B8%E7%9A%84%E5%BD%B1%E5%93%8D/"/>
+      <url>/2020/07/31/%E9%98%B5%E5%88%97%E4%BD%8D%E7%A7%BB%E4%BB%A5%E5%8F%8A%E6%B5%81%E8%A1%8C%E5%8F%8D%E7%9B%B8%E7%9A%84%E5%BD%B1%E5%93%8D/</url>
+      
+        <content type="html"><![CDATA[<h2 id="阵列位移以及流行反相的影响"><a href="#阵列位移以及流行反相的影响" class="headerlink" title="阵列位移以及流行反相的影响"></a><font size=6>阵列位移以及流行反相的影响</font></h2><h3 id="阵列位移的影响"><a href="#阵列位移的影响" class="headerlink" title="阵列位移的影响"></a><font size=5>阵列位移的影响</font></h3><blockquote><p>会产生这个问题，是因为在邱爽师兄在给我导出单元方向图进行赋形时，其仿真的阵列的相位中心和我们满阵的相位中心有一个偏移. 由此,这个偏移是否会导致单元方向图存在误差？是否需要补偿？</p></blockquote><p>对此，进行了分析和讨论.</p><p>假设共有$N$个阵元，旋转角和离轴角分别取1度为间隔，即N_theta=91, N_phi=361.则阵列流行可以写为</p><script type="math/tex; mode=display"> A=\begin{bmatrix}   e^{j\frac{2\pi}{\lambda}(u_1 \varDelta x_1+v_1 \varDelta y_1)} & ... & e^{j\frac{2\pi}{\lambda}(u_{Ntheta \times N_{phi}} \varDelta x+v_{Ntheta \times N_{phi}} \varDelta y)}\\    \vdots & \ddots & \vdots \\   e^{j\frac{2\pi}{\lambda}(u_1 \varDelta x_N+v_1 \varDelta y_N)} & ... & e^{j\frac{2\pi}{\lambda}(u_{Ntheta \times N_phi} \varDelta x_N+v_{Ntheta \times N_{phi}} \varDelta y_N)}  \end{bmatrix} \tag{1}</script><p>易知，该矩阵为一个$N \times (N_{theta} \times N_{phi})$的矩阵. $\varDelta x 和\varDelta y$为相应阵元相对于相位中心的位移.</p><p>若所有阵元整体偏移一定距离，那么矩阵$A$变为，</p><script type="math/tex; mode=display"> A=\begin{bmatrix}   e^{\phi_1}e^{j\frac{2\pi}{\lambda}(u_1 \varDelta x_1+v_1 \varDelta y_1)} & ... & e^{\phi_M}e^{j\frac{2\pi}{\lambda}(u_{Ntheta \times N_{phi}} \varDelta x_1+v_{Ntheta \times N_{phi}} \varDelta y_1)}\\    \vdots & \ddots & \vdots \\   e^{\phi_1}e^{j\frac{2\pi}{\lambda}(u_1 \varDelta x_N+v_1 \varDelta y_N)} & ... & e^{\phi_M}e^{j\frac{2\pi}{\lambda}(u_{Ntheta \times N_phi} \varDelta x_N+v_{Ntheta \times N_{phi}} \varDelta y_N)}  \end{bmatrix} \tag{2}</script><p>其中，令$M=N_{theta} \times N_{phi}$，即每个阵元在相同的方向上，其因为阵列整体偏移引起的相差是一致的(因为与$\varDelta x 和 \varDelta y$的变化以及$u、v$有关，而每个阵元的位移无论对哪个方向来说都是一致的). 而在不同的方向上是不同的(因为$u、v$不同).</p><p>那么在波束形成时，可以表示为</p><script type="math/tex; mode=display"> B=\begin{bmatrix}   e^{\phi_1}(w_1e^{j\frac{2\pi}{\lambda}(u_1 \varDelta x_1+v_1 \varDelta y_1)}+...+w_Ne^{j\frac{2\pi}{\lambda}(u_1 \varDelta x_N+v_1 \varDelta y_N)}） ... & e^{\phi_M}(w_1e^{j\frac{2\pi}{\lambda}(u_M \varDelta x_1+v_M \varDelta y_1)}+...+w_Ne^{j\frac{2\pi}{\lambda}(u_M \varDelta x_N+v_M \varDelta y_N)}）  \end{bmatrix} \tag{3}</script><p>可以看到每个角度上波束方向图都乘上了相应的相位，但相位上的变化，在取模之后，其幅值或者说功率方向图的大小和没有位移相比，并不会改变. 而且我们一般只看方向图的幅度方向图或者功率方向图，因此，<font color=#DC143C>阵列的偏移不会对方向图产生影响.</font></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 阵列信号处理 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>EIRP TRP EIS TIS的概念 以及隔离度的计算</title>
       <link href="/2020/07/09/EIRP%20TRP%20EIS%20TIS/"/>
       <url>/2020/07/09/EIRP%20TRP%20EIS%20TIS/</url>
