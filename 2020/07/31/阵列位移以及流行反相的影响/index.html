@@ -141,7 +141,8 @@
    a_Ne^{j\Phi_N}e^{-j\frac{2\pi}{\lambda}(\sin \theta_1 \cos (\phi_1 \pm \pi) \varDelta x_N+\sin \theta_1 \sin (\phi_1 \pm \pi)\varDelta y_{N})} 
   \end{bmatrix} \tag{8}</script><p>不难看出，若实际的流行为正，就导致用负流行乘上HFSS在正流行下导出的单元方向图优化出来的权重实际上是乘在了$\phi \pm \pi$的方向上. 因此，在考虑单元方向图的情况下，仿真时就要用和实际对应的流行.</p>
 <p>由于不是很确定，所以跑了以下仿真，以下是同样一组权重(是在<font color=#DC143C>正流行且考虑单元的情况下</font>仿真的)，在只改变流行正负的情况下的输出，可以看到是有差异的，说明在考虑单元时要匹配正负方向图，</p>
-<div align=center><img src ="https://s1.ax1x.com/2020/08/01/a8JaDJ.png" width = "300" height = "300"/><img src ="https://s1.ax1x.com/2020/08/01/a8JUu4.png" width = "300" height = "300"/></div>
+<center class="half">
+<img src ="https://s1.ax1x.com/2020/08/01/a8JaDJ.png" width = "300" height = "300"/><img src ="https://s1.ax1x.com/2020/08/01/a8JUu4.png" width = "300" height = "300"/></center>
 
 <div align='center' ><font size=2> Figure.2 坐标系及定义</font></div>	  
 
