@@ -5,6 +5,25 @@
     
     <entry>
       <title>单元方向图带流行的影响</title>
+      <link href="/2020/08/19/MIMO%20Radar%E5%AD%A6%E4%B9%A0/"/>
+      <url>/2020/08/19/MIMO%20Radar%E5%AD%A6%E4%B9%A0/</url>
+      
+        <content type="html"><![CDATA[<h2 id="MIMO-学习"><a href="#MIMO-学习" class="headerlink" title="MIMO 学习"></a><font size=6>MIMO 学习</font></h2><p>Unlike a standard phased-array radar, which transmits scaled versions of a single waveform, a MIMO radar system can transmit via its antennas multiple probing signals that may be chosen quite freely.<br>普通的相控阵无论传输什么信号，每个阵元上的馈的信号是一致的(权值不同). 而MIMO的每一个发射阵元上的信号则是可以较为自由选择的.<font color=#DC143C>不过，这里的probing signal 不太理解是什么.</font></p><p>The advantages of a MIMO radar system with both collocated and widely separated antenna elements.<br>使用MIMO，可以配合collocated antennas 以及 widely separated antennas，可以获得相比于常规相控阵更好的性能.<br>Collocated antennas:<br>Widely separated antenna:顾名思义</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 阵列信号处理 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>单元方向图带流行的影响</title>
       <link href="/2020/08/01/%E5%8D%95%E5%85%83%E6%96%B9%E5%90%91%E5%9B%BE%E5%B8%A6%E6%B5%81%E8%A1%8C%E7%9A%84%E5%BD%B1%E5%93%8D/"/>
       <url>/2020/08/01/%E5%8D%95%E5%85%83%E6%96%B9%E5%90%91%E5%9B%BE%E5%B8%A6%E6%B5%81%E8%A1%8C%E7%9A%84%E5%BD%B1%E5%93%8D/</url>
       
